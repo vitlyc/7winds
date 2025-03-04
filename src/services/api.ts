@@ -30,6 +30,7 @@ export const apiSlice = createApi({
             )
           } catch (err) {
             console.error('Ошибка при создании строки:', err)
+            console.log(arg)
           }
         },
       }
@@ -66,10 +67,7 @@ export const apiSlice = createApi({
         method: 'POST',
         body: updatedRow,
       }),
-      onQueryStarted: async (
-        { id, updatedRow },
-        { dispatch, queryFulfilled }
-      ) => {
+      onQueryStarted: async ({ id }, { dispatch, queryFulfilled }) => {
         try {
           const { data } = await queryFulfilled
 
