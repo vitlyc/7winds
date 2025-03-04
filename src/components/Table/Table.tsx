@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import './Table.scss'
+import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline'
 import TableRow from '../TableRow/TableRow'
 import { useGetRowsQuery, updateQueryData } from '../../services/api'
 import { Row } from '../../types'
@@ -58,9 +59,13 @@ export default function Table() {
     <div className="table no-select">
       <div className="title">
         <h4>Строительно-монтажные работы</h4>
-        <button onClick={handleAddRootRow} className="add-btn">
+        <AddCircleOutlineIcon
+          onClick={handleAddRootRow}
+          className="add-btn"
+          viewBox="0 0 24 24"
+        >
           Добавить работы
-        </button>
+        </AddCircleOutlineIcon>
       </div>
       <div className="table-section">
         <table>
